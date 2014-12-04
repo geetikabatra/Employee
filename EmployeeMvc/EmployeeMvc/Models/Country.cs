@@ -10,6 +10,6 @@ namespace EmployeeMvc.Models
         public int cou_Id { get; set; }
         public string cou_Name { get; set; }
 
-        public virtual tbl_city tb_city { get; set; }
+        public virtual tbl_city city { get; set; }
     }
 }

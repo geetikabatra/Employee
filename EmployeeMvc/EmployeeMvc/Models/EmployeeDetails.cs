@@ -16,7 +16,7 @@ namespace EmployeeMvc.Models
         public string empdet_residentialAddress { get; set; }
         public string empdet_residentialPostCode { get; set; }
 
-        public virtual tbl_city tbl_city{ get;set;}
-        public virtual tbl_Employee tbl_Employee { get; set; }
+        public virtual tbl_city city{ get;set;}
+        public virtual tbl_Employee Employee { get; set; }
     }
 }

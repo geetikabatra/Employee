@@ -15,7 +15,7 @@ namespace EmployeeMvc.Models
         public DateTime emp_LastLogin{get;set ;}
         public Boolean emp_IsRemove { get; set;}
 
-        public virtual ICollection<tbl_EmployeeDetails> tbl_EmployeeDetails { get; set;}
+        public virtual ICollection<tbl_EmployeeDetails> EmployeeDetails { get; set;}
     }
     
 }
