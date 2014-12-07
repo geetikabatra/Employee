@@ -5,7 +5,7 @@ using System.Web;
 
 namespace EmployeeMvc.Models
 {
-    public class City
+    public class tbl_city
     {
         public int citId { get; set; }
         public string cit_name { get; set; }

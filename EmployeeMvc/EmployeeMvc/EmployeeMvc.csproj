@@ -120,14 +120,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\Employee.cs" />
+    <Compile Include="DAL\EmployeeContext.cs" />
+    <Compile Include="DAL\EmployeeInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\City.cs" />
-    <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EmployeeDetails.cs" />
+    <Compile Include="Models\tbl_city.cs" />
+    <Compile Include="Models\tbl_Country.cs" />
+    <Compile Include="Models\tbl_Employee.cs" />
+    <Compile Include="Models\tbl_EmployeeDetails.cs" />
     <Compile Include="MyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
