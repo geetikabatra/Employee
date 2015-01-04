@@ -1,0 +1,58 @@
+﻿@model NewEmployee.tbl_Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_Login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_Login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_LastLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_LastLogin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_IsRemove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_IsRemove)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.emp_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

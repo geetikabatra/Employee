@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using NewEmployee;
 
+
+
+
 namespace NewEmployee.Controllers
 {
     public class HomeController : Controller
@@ -19,8 +22,8 @@ namespace NewEmployee.Controllers
         }
         public ActionResult ViewAllEmployees()
         {
-          NewEmployeeDatabaseEntitiesContext NDE = new NewEmployeeDatabaseEntitiesContext();
-            return View();
+           NewEmployeeDatabaseEntities2 NDE = new NewEmployeeDatabaseEntities2();
+           return View();
         }
 
 

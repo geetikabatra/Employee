@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="552fb1b4ca844cacb0c2f68d4f4a5da6" Name="Diagram1">
+      <Diagram DiagramId="db4b48097139476f9f5adf4f1290ce3d" Name="Diagram1">
         <EntityTypeShape EntityType="NewEmployeeDatabaseModel.tbl_city" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NewEmployeeDatabaseModel.tbl_Country" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="NewEmployeeDatabaseModel.tbl_Employee" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NewEmployeeDatabaseModel.tbl_EmployeeDetails" Width="2.75" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NewEmployeeDatabaseModel.tbl_EmployeeDetails" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="NewEmployeeDatabaseModel.FK_tbl_city_tbl_Country" ManuallyRouted="false" />
         <AssociationConnector Association="NewEmployeeDatabaseModel.FK_tbl_EmployeeDetails_tbl_city" ManuallyRouted="false" />
         <AssociationConnector Association="NewEmployeeDatabaseModel.FK_tbl_EmployeeDetails_tbl_Employee" ManuallyRouted="false" />
