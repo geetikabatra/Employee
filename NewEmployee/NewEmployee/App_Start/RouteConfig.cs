@@ -16,7 +16,7 @@ namespace NewEmployee
             routes.MapRoute(
                 name: "",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

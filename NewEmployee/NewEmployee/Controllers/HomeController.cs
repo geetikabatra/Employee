@@ -20,6 +20,10 @@ namespace NewEmployee.Controllers
         {
             return View();
         }
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult ViewAllEmployees()
         {
            NewEmployeeDatabaseEntities2 NDE = new NewEmployeeDatabaseEntities2();
