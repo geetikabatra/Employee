@@ -121,6 +121,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeDetails.cs" />
     <Compile Include="MyModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,7 +223,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DAL\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
