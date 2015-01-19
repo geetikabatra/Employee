@@ -5,12 +5,22 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="NewEmployeeDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="tbl_city">
           <Key>
             <PropertyRef Name="cit_Id" />
           </Key>
           <Property Name="cit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cit_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="cit_name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cit_couId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tbl_Country">
@@ -18,15 +28,15 @@
             <PropertyRef Name="cou_Id" />
           </Key>
           <Property Name="cou_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cou_Name" Type="nvarchar" MaxLength="128" />
+          <Property Name="cou_Name" Type="varchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="tbl_Employee">
           <Key>
             <PropertyRef Name="emp_Id" />
           </Key>
           <Property Name="emp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="emp_Login" Type="nvarchar" MaxLength="64" />
-          <Property Name="emp_Password" Type="nvarchar" MaxLength="64" />
+          <Property Name="emp_Login" Type="varchar" MaxLength="64" />
+          <Property Name="emp_Password" Type="varchar" MaxLength="64" />
           <Property Name="emp_CreateDate" Type="datetime" />
           <Property Name="emp_LastLogin" Type="datetime" />
           <Property Name="emp_IsRemove" Type="bit" />
@@ -37,12 +47,12 @@
           </Key>
           <Property Name="empdet_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="empdet_empId" Type="int" Nullable="false" />
-          <Property Name="empdet_FirstName" Type="nvarchar" MaxLength="64" Nullable="false" />
-          <Property Name="empdet_MiddleName" Type="nvarchar" MaxLength="64" />
-          <Property Name="empdet_LastName" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="empdet_FirstName" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="empdet_MiddleName" Type="varchar" MaxLength="64" />
+          <Property Name="empdet_LastName" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="empdet_CityId" Type="int" Nullable="false" />
-          <Property Name="empdet_residentialAddress" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="empdet_residentialPostCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="empdet_residentialAddress" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="empdet_residentialPostCode" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_tbl_city_tbl_Country">
           <End Role="tbl_Country" Type="Self.tbl_Country" Multiplicity="1" />
@@ -81,6 +91,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="NewEmployeeDatabaseModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_city" EntityType="Self.tbl_city" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Country" EntityType="Self.tbl_Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Employee" EntityType="Self.tbl_Employee" Schema="dbo" store:Type="Tables" />
@@ -103,12 +114,22 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NewEmployeeDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="tbl_city">
           <Key>
             <PropertyRef Name="cit_Id" />
           </Key>
           <Property Name="cit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cit_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="cit_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cit_couId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tbl_Country" Relationship="Self.FK_tbl_city_tbl_Country" FromRole="tbl_city" ToRole="tbl_Country" />
           <NavigationProperty Name="tbl_EmployeeDetails" Relationship="Self.FK_tbl_EmployeeDetails_tbl_city" FromRole="tbl_city" ToRole="tbl_EmployeeDetails" />
@@ -118,7 +139,7 @@
             <PropertyRef Name="cou_Id" />
           </Key>
           <Property Name="cou_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cou_Name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="cou_Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tbl_city" Relationship="Self.FK_tbl_city_tbl_Country" FromRole="tbl_Country" ToRole="tbl_city" />
         </EntityType>
         <EntityType Name="tbl_Employee">
@@ -126,8 +147,8 @@
             <PropertyRef Name="emp_Id" />
           </Key>
           <Property Name="emp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="emp_Login" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="emp_Password" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="emp_Login" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="emp_Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Name="emp_CreateDate" Type="DateTime" Precision="3" />
           <Property Name="emp_LastLogin" Type="DateTime" Precision="3" />
           <Property Name="emp_IsRemove" Type="Boolean" />
@@ -139,12 +160,12 @@
           </Key>
           <Property Name="empdet_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="empdet_empId" Type="Int32" Nullable="false" />
-          <Property Name="empdet_FirstName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="empdet_MiddleName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Name="empdet_LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empdet_FirstName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empdet_MiddleName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="empdet_LastName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="empdet_CityId" Type="Int32" Nullable="false" />
-          <Property Name="empdet_residentialAddress" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="empdet_residentialPostCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="empdet_residentialAddress" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="empdet_residentialPostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbl_city" Relationship="Self.FK_tbl_EmployeeDetails_tbl_city" FromRole="tbl_EmployeeDetails" ToRole="tbl_city" />
           <NavigationProperty Name="tbl_Employee" Relationship="Self.FK_tbl_EmployeeDetails_tbl_Employee" FromRole="tbl_EmployeeDetails" ToRole="tbl_Employee" />
         </EntityType>
@@ -184,7 +205,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NewEmployeeDatabaseEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NewEmployeeDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="tbl_city" EntityType="Self.tbl_city" />
           <EntitySet Name="tbl_Country" EntityType="Self.tbl_Country" />
           <EntitySet Name="tbl_Employee" EntityType="Self.tbl_Employee" />
@@ -207,7 +229,18 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NewEmployeeDatabaseModelStoreContainer" CdmEntityContainer="NewEmployeeDatabaseEntities3">
+        <EntityContainerMapping StorageEntityContainer="NewEmployeeDatabaseModelStoreContainer" CdmEntityContainer="NewEmployeeDatabaseEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="NewEmployeeDatabaseModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tbl_city">
             <EntityTypeMapping TypeName="NewEmployeeDatabaseModel.tbl_city">
               <MappingFragment StoreEntitySet="tbl_city">

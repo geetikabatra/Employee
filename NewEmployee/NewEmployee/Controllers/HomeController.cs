@@ -26,7 +26,7 @@ namespace NewEmployee.Controllers
         }
         public ActionResult ViewAllEmployees()
         {
-           NewEmployeeDatabaseEntities2 NDE = new NewEmployeeDatabaseEntities2();
+            
            return View();
         }
 

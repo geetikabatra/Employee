@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
+
 
 
 namespace NewEmployee.Models
@@ -18,7 +20,7 @@ namespace NewEmployee.Models
         public Boolean emp_IsRemove { get; set; }
 
 
-        public virtual ICollection<tbl_EmployeeDetails> tbl_EmployeeDetails { get; set; }
+        public virtual ICollection<EmployeeDetails> tbl_EmployeeDetails { get; set; }
        
 
     }
