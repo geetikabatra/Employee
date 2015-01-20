@@ -7,103 +7,104 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NewEmployee.Models;
+using NewEmployee.Models.NewEmployee;
 
 namespace NewEmployee.Controllers
 {
-    [RoutePrefix("tbl_Employee")]
+    [RoutePrefix("tbl_city")]
     [Route("{action}/{id}")]
-    public class tbl_EmployeeController : Controller
+    public class tbl_cityController : Controller
     {
         private NewEmployeeContext db = new NewEmployeeContext();
 
-        // GET: tbl_Employee
+        // GET: tbl_city
         [Route]
         public ActionResult Index()
         {
-            return View(db.tbl_Employee.ToList());
+            return View(db.tbl_city.ToList());
         }
 
-        // GET: tbl_Employee/Details/5
+        // GET: tbl_city/Details/5
         public ActionResult Details(int id)
         {
-            tbl_Employee tbl_Employee = db.tbl_Employee.Find(id);
-            if (tbl_Employee == null)
+            tbl_city tbl_city = db.tbl_city.Find(id);
+            if (tbl_city == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_Employee);
+            return View(tbl_city);
         }
 
-        // GET: tbl_Employee/Create
+        // GET: tbl_city/Create
         [Route("Create")]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: tbl_Employee/Create
+        // POST: tbl_city/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [Route("Create")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="emp_Id,emp_Login,emp_Password,emp_CreateDate,emp_LastLogin,emp_IsRemove")] tbl_Employee tbl_Employee)
+        public ActionResult Create([Bind(Include="cit_Id,cit_name,cit_couId")] tbl_city tbl_city)
         {
             if (ModelState.IsValid)
             {
-                db.tbl_Employee.Add(tbl_Employee);
+                db.tbl_city.Add(tbl_city);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tbl_Employee);
+            return View(tbl_city);
         }
 
-        // GET: tbl_Employee/Edit/5
+        // GET: tbl_city/Edit/5
         public ActionResult Edit(int id)
         {
-            tbl_Employee tbl_Employee = db.tbl_Employee.Find(id);
-            if (tbl_Employee == null)
+            tbl_city tbl_city = db.tbl_city.Find(id);
+            if (tbl_city == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_Employee);
+            return View(tbl_city);
         }
 
-        // POST: tbl_Employee/Edit/5
+        // POST: tbl_city/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="emp_Id,emp_Login,emp_Password,emp_CreateDate,emp_LastLogin,emp_IsRemove")] tbl_Employee tbl_Employee)
+        public ActionResult Edit([Bind(Include="cit_Id,cit_name,cit_couId")] tbl_city tbl_city)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tbl_Employee).State = EntityState.Modified;
+                db.Entry(tbl_city).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tbl_Employee);
+            return View(tbl_city);
         }
 
-        // GET: tbl_Employee/Delete/5
+        // GET: tbl_city/Delete/5
         public ActionResult Delete(int id)
         {
-            tbl_Employee tbl_Employee = db.tbl_Employee.Find(id);
-            if (tbl_Employee == null)
+            tbl_city tbl_city = db.tbl_city.Find(id);
+            if (tbl_city == null)
             {
                 return HttpNotFound();
             }
-            return View(tbl_Employee);
+            return View(tbl_city);
         }
 
-        // POST: tbl_Employee/Delete/5
+        // POST: tbl_city/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tbl_Employee tbl_Employee = db.tbl_Employee.Find(id);
-            db.tbl_Employee.Remove(tbl_Employee);
+            tbl_city tbl_city = db.tbl_city.Find(id);
+            db.tbl_city.Remove(tbl_city);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
