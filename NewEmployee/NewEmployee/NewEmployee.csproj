@@ -122,6 +122,11 @@
     <Compile Include="DAL\NewEmployeeContext.cs" />
     <Compile Include="DAL\NewEmployeeInitializer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Shared\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
