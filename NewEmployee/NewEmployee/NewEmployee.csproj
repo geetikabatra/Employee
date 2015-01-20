@@ -119,28 +119,53 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\NewEmployeeContext.cs" />
-    <Compile Include="DAL\NewEmployeeInitializer.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="MyModel.cs">
+    <Compile Include="Controllers\tbl_EmployeeController.cs" />
+    <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="MyModel.Designer.cs">
+    <Compile Include="Models\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MyModel.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+    <Compile Include="Models\NewEmployee.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewEmployee.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewEmployee.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewEmployee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewEmployee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewEmployee.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewEmployee\Context.cs" />
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_city.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Country.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_EmployeeDetails.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\Shared\Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -158,22 +183,32 @@
     <Content Include="CodeTemplates\MvcControllerEmpty\Controller.cs.t4" />
     <Content Include="CodeTemplates\Manager.ttinclude" />
     <Content Include="CodeTemplates\DbHelper.ttinclude" />
-    <EntityDeploy Include="MyModel.edmx">
+    <EntityDeploy Include="Models\NewEmployee.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MyModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>NewEmployee.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="MyModel.Context.tt">
+    <Content Include="Models\NewEmployee.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MyModel.edmx</DependentUpon>
-      <LastGenOutput>MyModel.Context.cs</LastGenOutput>
+      <DependentUpon>NewEmployee.edmx</DependentUpon>
+      <LastGenOutput>NewEmployee.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="MyModel.edmx.diagram">
-      <DependentUpon>MyModel.edmx</DependentUpon>
+    <Content Include="Models\NewEmployee.edmx.diagram">
+      <DependentUpon>NewEmployee.edmx</DependentUpon>
     </Content>
-    <Content Include="MyModel.tt">
+    <Content Include="Models\NewEmployee.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MyModel.edmx</DependentUpon>
-      <LastGenOutput>MyModel.cs</LastGenOutput>
+      <DependentUpon>NewEmployee.edmx</DependentUpon>
+      <LastGenOutput>NewEmployee.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>NewEmployee.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>NewEmployee.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -206,9 +241,15 @@
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\LogInResult.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\tbl_Employee\Create.cshtml" />
+    <Content Include="Views\tbl_Employee\Delete.cshtml" />
+    <Content Include="Views\tbl_Employee\Details.cshtml" />
+    <Content Include="Views\tbl_Employee\Edit.cshtml" />
+    <Content Include="Views\tbl_Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

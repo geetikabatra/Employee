@@ -7,17 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NewEmployee
+namespace NewEmployee.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
-    public partial class sysdiagram
+    public partial class tbl_Country
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public tbl_Country()
+        {
+            this.tbl_city = new HashSet<tbl_city>();
+        }
+        [Key]
+        public int cou_Id { get; set; }
+        public string cou_Name { get; set; }
+    
+        public virtual ICollection<tbl_city> tbl_city { get; set; }
     }
 }
