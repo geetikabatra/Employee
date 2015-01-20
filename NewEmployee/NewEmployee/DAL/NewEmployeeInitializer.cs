@@ -8,7 +8,7 @@ using NewEmployee.Models;
 
 namespace NewEmployee.DAL
 {
-    public class NewEmployeeInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<NewEmployeeContext>
+    public class NewEmployeeInitializer :IDatabaseInitializer<NewEmployeeContext>
     {
         protected override void Seed(NewEmployeeContext context)
         {

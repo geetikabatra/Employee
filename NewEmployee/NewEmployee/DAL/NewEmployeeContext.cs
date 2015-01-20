@@ -10,7 +10,7 @@ namespace NewEmployee.DAL
     public partial class NewEmployeeContext : DbContext
     {
         public NewEmployeeContext()
-            : base("name=NewEmployeeContext")
+            : base("NewEmployeeContext")
         {
         }
 
@@ -19,9 +19,9 @@ namespace NewEmployee.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-        public virtual DbSet<City> tbl_city { get; set; }
-        public virtual DbSet<Country>tbl_Country { get; set; }
-        public virtual DbSet<Employee> tbl_Employee { get; set; }
-        public virtual DbSet<EmployeeDetails> tbl_EmployeeDetails { get; set; }
+        public  DbSet<City> tbl_city { get; set; }
+        public  DbSet<Country>tbl_Country { get; set; }
+        public  DbSet<Employee> tbl_Employee { get; set; }
+        public  DbSet<EmployeeDetails> tbl_EmployeeDetails { get; set; }
     }
 }
