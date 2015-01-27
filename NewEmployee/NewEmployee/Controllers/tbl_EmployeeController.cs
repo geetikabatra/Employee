@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NewEmployee.Models;
+using NewEmployee.Models.NewEmployee;
 
 namespace NewEmployee.Controllers
 {
@@ -14,7 +15,7 @@ namespace NewEmployee.Controllers
     [Route("{action}/{id}")]
     public class tbl_EmployeeController : Controller
     {
-        private NewEmployeeContext db = new NewEmployeeContext();
+        private Context db = new Context();
 
         // GET: tbl_Employee
         [Route]
