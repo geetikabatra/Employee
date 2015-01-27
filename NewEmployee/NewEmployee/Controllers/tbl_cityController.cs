@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NewEmployee.Models;
+using NewEmployee.Models.NewEmployee;
 
 namespace NewEmployee.Controllers
 {
