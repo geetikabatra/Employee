@@ -1,0 +1,74 @@
+﻿@model NewEmployee.Models.tbl_EmployeeDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_EmployeeDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empdet_empId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empdet_empId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empdet_FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empdet_FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empdet_MiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empdet_MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empdet_LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empdet_LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empdet_CityId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empdet_CityId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empdet_residentialAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empdet_residentialAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.empdet_residentialPostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.empdet_residentialPostCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.empdet_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

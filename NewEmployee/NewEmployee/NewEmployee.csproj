@@ -120,7 +120,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\tbl_cityController.cs" />
+    <Compile Include="Controllers\tbl_CountryController.cs" />
     <Compile Include="Controllers\tbl_EmployeeController.cs" />
+    <Compile Include="Controllers\tbl_EmployeeDetailsController.cs" />
     <Compile Include="DAL\NewEmployeeInitializer.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -148,7 +150,9 @@
       <DependentUpon>NewEmployee.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\NewEmployee\Context.cs" />
+    <Compile Include="Models\NewEmployee\ContextEmployee.cs" />
     <Compile Include="Models\NewEmployee\NewEmployeeContext.cs" />
+    <Compile Include="Models\New\Context.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -251,6 +255,16 @@
     <Content Include="Views\tbl_city\Details.cshtml" />
     <Content Include="Views\tbl_city\Edit.cshtml" />
     <Content Include="Views\tbl_city\Index.cshtml" />
+    <Content Include="Views\tbl_Country\Create.cshtml" />
+    <Content Include="Views\tbl_Country\Delete.cshtml" />
+    <Content Include="Views\tbl_Country\Details.cshtml" />
+    <Content Include="Views\tbl_Country\Edit.cshtml" />
+    <Content Include="Views\tbl_Country\Index.cshtml" />
+    <Content Include="Views\tbl_EmployeeDetails\Create.cshtml" />
+    <Content Include="Views\tbl_EmployeeDetails\Delete.cshtml" />
+    <Content Include="Views\tbl_EmployeeDetails\Details.cshtml" />
+    <Content Include="Views\tbl_EmployeeDetails\Edit.cshtml" />
+    <Content Include="Views\tbl_EmployeeDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

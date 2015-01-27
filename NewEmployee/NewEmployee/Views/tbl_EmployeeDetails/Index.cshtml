@@ -1,0 +1,69 @@
+﻿@model IEnumerable<NewEmployee.Models.tbl_EmployeeDetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.empdet_empId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empdet_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empdet_MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empdet_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empdet_CityId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empdet_residentialAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.empdet_residentialPostCode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.empdet_empId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empdet_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empdet_MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empdet_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empdet_CityId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empdet_residentialAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.empdet_residentialPostCode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.empdet_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.empdet_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.empdet_id })
+        </td>
+    </tr>
+}
+
+</table>
