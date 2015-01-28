@@ -13,10 +13,10 @@ namespace NewEmployee.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NewEmployeeDatabaseEntities : DbContext
+    public partial class NewEmployeeContext : DbContext
     {
-        public NewEmployeeDatabaseEntities()
-            : base("name=NewEmployeeDatabaseEntities")
+        public NewEmployeeContext()
+            : base("name=NewEmployeeContext")
         {
         }
     

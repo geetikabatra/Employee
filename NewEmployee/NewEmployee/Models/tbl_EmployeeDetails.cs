@@ -11,12 +11,9 @@ namespace NewEmployee.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
     
     public partial class tbl_EmployeeDetails
     {
-        [Key]
         public int empdet_id { get; set; }
         public int empdet_empId { get; set; }
         public string empdet_FirstName { get; set; }

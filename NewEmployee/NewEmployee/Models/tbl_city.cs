@@ -7,15 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
-
-
 namespace NewEmployee.Models
 {
-    
+    using System;
+    using System.Collections.Generic;
     
     public partial class tbl_city
     {
@@ -23,7 +18,7 @@ namespace NewEmployee.Models
         {
             this.tbl_EmployeeDetails = new HashSet<tbl_EmployeeDetails>();
         }
-        [Key]
+    
         public int cit_Id { get; set; }
         public string cit_name { get; set; }
         public int cit_couId { get; set; }

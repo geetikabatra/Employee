@@ -11,7 +11,6 @@ namespace NewEmployee.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class tbl_Employee
     {
@@ -19,7 +18,7 @@ namespace NewEmployee.Models
         {
             this.tbl_EmployeeDetails = new HashSet<tbl_EmployeeDetails>();
         }
-        [Key]
+    
         public int emp_Id { get; set; }
         public string emp_Login { get; set; }
         public string emp_Password { get; set; }

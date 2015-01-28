@@ -11,7 +11,6 @@ namespace NewEmployee.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class tbl_Country
     {
@@ -19,7 +18,7 @@ namespace NewEmployee.Models
         {
             this.tbl_city = new HashSet<tbl_city>();
         }
-        [Key]
+    
         public int cou_Id { get; set; }
         public string cou_Name { get; set; }
     
