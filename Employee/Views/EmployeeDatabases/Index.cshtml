@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Employee.Models.EmployeeDatabase>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_CreateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_lastLogin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_IsRemove)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_MiddleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_CityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_CountryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_ResidentialAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_ResidentialPostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_IsAdmin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_CreateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_lastLogin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_IsRemove)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_MiddleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_CityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_CountryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_ResidentialAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_ResidentialPostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_IsAdmin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.emp_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.emp_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.emp_Id })
+        </td>
+    </tr>
+}
+
+</table>

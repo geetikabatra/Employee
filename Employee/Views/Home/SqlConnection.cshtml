@@ -1,0 +1,47 @@
+﻿
+@{
+    var details = ViewBag.LR;
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SqlConnection</title>
+</head>
+<body>
+    <div> 
+        <table border="1">
+            <tr>
+                <td>First Name</td>
+                <td>Middle Name</td>
+                <td>Last Name</td>
+                <td>City Name</td>
+                <td>Country Name</td>
+                <td>Residential Address</td>
+                <td>Residential Post Code</td>
+                <td>City Name</td>
+
+
+
+            </tr>
+            <tr>
+                <td>@details.emp_FirstName</td>
+                <td>@details.emp_MiddleName</td>
+                <td>@details.emp_LastName</td>
+                <td>@details.emp_CityName</td>
+                <td>@details.emp_CountryName</td>
+                <td>@details.emp_ResidentialAddress</td>
+                <td>@details.emp_ResidentialPostCode</td>
+                <td>@details.emp_IsAdmin</td>
+               
+                
+
+            </tr>
+           </table>
+</div>
+
+</body>
+</html>

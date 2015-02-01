@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        Welcome!!
+
+       
+       
+        <form method="post" action="\Home\SqlConnection">
+            <table>
+                <tr>
+                    <td>Employee ID</td>
+                    <td>
+                        @*<input id='Name' name='N_Name' type='text' value='' />  This is a text box,this textbox can also be written using HTML helper classes*@
+                        @Html.TextBox("emp_Id")@*N_Name sets the ID as well as name of the textbox,We use html helper classes to reduce the code*@
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        @Html.TextBox("emp_passwd")
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><input type='submit' value='Submit' /></td>
+                </tr>
+            </table>
+        </form>
+
+
+    </div>
+</body>
+</html>

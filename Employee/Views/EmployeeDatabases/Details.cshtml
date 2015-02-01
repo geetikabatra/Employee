@@ -1,0 +1,122 @@
+﻿@model Employee.Models.EmployeeDatabase
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmployeeDatabase</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_login)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_login)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_lastLogin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_lastLogin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_IsRemove)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_IsRemove)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_MiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_CityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_CountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_CountryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_ResidentialAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_ResidentialAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_ResidentialPostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_ResidentialPostCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emp_IsAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emp_IsAdmin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.emp_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

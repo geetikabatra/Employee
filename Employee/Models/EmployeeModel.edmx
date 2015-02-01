@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EmployeeDatabase">
+          <Key>
+            <PropertyRef Name="emp_Id" />
+          </Key>
+          <Property Name="emp_Id" Type="int" Nullable="false" />
+          <Property Name="emp_login" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="emp_Password" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="emp_CreateDate" Type="datetime" />
+          <Property Name="emp_lastLogin" Type="datetime" Nullable="false" />
+          <Property Name="emp_IsRemove" Type="bit" />
+          <Property Name="emp_FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emp_MiddleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emp_LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emp_CityName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emp_CountryName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emp_ResidentialAddress" Type="varchar" MaxLength="256" Nullable="false" />
+          <Property Name="emp_ResidentialPostCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="emp_IsAdmin" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EmployeeModelStoreContainer">
+          <EntitySet Name="EmployeeDatabase" EntityType="Self.EmployeeDatabase" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EmployeeDatabase">
+          <Key>
+            <PropertyRef Name="emp_Id" />
+          </Key>
+          <Property Name="emp_Id" Type="Int32" Nullable="false" />
+          <Property Name="emp_login" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="emp_lastLogin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="emp_IsRemove" Type="Boolean" />
+          <Property Name="emp_FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_ResidentialAddress" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_ResidentialPostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emp_IsAdmin" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="EmployeeEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmployeeDatabases" EntityType="Self.EmployeeDatabase" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeModelStoreContainer" CdmEntityContainer="EmployeeEntities2">
+          <EntitySetMapping Name="EmployeeDatabases">
+            <EntityTypeMapping TypeName="EmployeeModel.EmployeeDatabase">
+              <MappingFragment StoreEntitySet="EmployeeDatabase">
+                <ScalarProperty Name="emp_Id" ColumnName="emp_Id" />
+                <ScalarProperty Name="emp_login" ColumnName="emp_login" />
+                <ScalarProperty Name="emp_Password" ColumnName="emp_Password" />
+                <ScalarProperty Name="emp_CreateDate" ColumnName="emp_CreateDate" />
+                <ScalarProperty Name="emp_lastLogin" ColumnName="emp_lastLogin" />
+                <ScalarProperty Name="emp_IsRemove" ColumnName="emp_IsRemove" />
+                <ScalarProperty Name="emp_FirstName" ColumnName="emp_FirstName" />
+                <ScalarProperty Name="emp_MiddleName" ColumnName="emp_MiddleName" />
+                <ScalarProperty Name="emp_LastName" ColumnName="emp_LastName" />
+                <ScalarProperty Name="emp_CityName" ColumnName="emp_CityName" />
+                <ScalarProperty Name="emp_CountryName" ColumnName="emp_CountryName" />
+                <ScalarProperty Name="emp_ResidentialAddress" ColumnName="emp_ResidentialAddress" />
+                <ScalarProperty Name="emp_ResidentialPostCode" ColumnName="emp_ResidentialPostCode" />
+                <ScalarProperty Name="emp_IsAdmin" ColumnName="emp_IsAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
