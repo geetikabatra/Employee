@@ -5,43 +5,63 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>SqlConnection</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@details.emp_FirstName</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div> 
-        <table border="1">
-            <tr>
-                <td>First Name</td>
-                <td>Middle Name</td>
-                <td>Last Name</td>
-                <td>City Name</td>
-                <td>Country Name</td>
-                <td>Residential Address</td>
-                <td>Residential Post Code</td>
-                <td>City Name</td>
+
+    <div class="jumbotron">
+        <h1>@details.emp_FirstName</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <table border="1">
+                <tr>
+                    <td>First Name</td>
+                    <td>Middle Name</td>
+                    <td>Last Name</td>
+                    <td>City Name</td>
+                    <td>Country Name</td>
+                    <td>Residential Address</td>
+                    <td>Residential Post Code</td>
+                    <td>Is Admin</td>
 
 
 
-            </tr>
-            <tr>
-                <td>@details.emp_FirstName</td>
-                <td>@details.emp_MiddleName</td>
-                <td>@details.emp_LastName</td>
-                <td>@details.emp_CityName</td>
-                <td>@details.emp_CountryName</td>
-                <td>@details.emp_ResidentialAddress</td>
-                <td>@details.emp_ResidentialPostCode</td>
-                <td>@details.emp_IsAdmin</td>
-               
+                </tr>
+                <tr>
+                    <td>@details.emp_FirstName</td>
+                    <td>@details.emp_MiddleName</td>
+                    <td>@details.emp_LastName</td>
+                    <td>@details.emp_CityName</td>
+                    <td>@details.emp_CountryName</td>
+                    <td>@details.emp_ResidentialAddress</td>
+                    <td>@details.emp_ResidentialPostCode</td>
+                    <td>@details.emp_IsAdmin</td>
+
+
+
+                </tr>
+            </table>
+            @using (Html.BeginForm())
+            {  @Html.AntiForgeryToken()
+            
+            <p>
+                @Html.ActionLink("Edit", "Edit","EmployeeDatabases",new{ id=details.emp_Id},null) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
                 
+            }
 
-            </tr>
-           </table>
-</div>
-
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
 </body>
 </html>
